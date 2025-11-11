@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-slate-800">
+    <section class="max-w-md min-h-screen mx-auto py-6 bg-gray-200 px-5">
+      <header>
+        <nav class="flex justify-between items-center">
+          <!-- logo and title -->
+          <div class="flex justify-between gap-3 items-center">
+            <img class="w-[50.56px]" src="assets/Group.png" alt="logo" />
+            <div>
+              <h1 class="text-2xl font-bold">
+                $ <span id="main-balance">45000</span>
+              </h1>
+              <p class="text-[#837878]">Available Balance</p>
+            </div>
+          </div>
+          <!-- button -->
+          <div>
+            <button
+              class="flex justify-center items-center gap-2 text-[#837878] px-3 py-1 rounded-lg border border-[#c2b7b7] cursor-pointer"
+            >
+              <img src="assets/log-out.png" alt="" />
+              Log Out
+            </button>
+          </div>
+        </nav>
+      </header>
+      <section class="mt-8">
+        <h1 class="text-[24px] mb-2 font-bold">🔥 Welcome to Payooo!</h1>
+        <p class="text-[#837878]">
+          Enjoy easy and convenient financial services with us. Cashout charge
+          is low and
+        </p>
+        <!-- card container -->
+        <div class="card-container mt-6 grid grid-cols-3 gap-4">
+          <div id="add-money" class="p-3 rounded-xl border border-[#c2b7b7]">
+            <img class="w-[30px] mx-auto" src="assets/wallet1.png" alt="" />
+            <p class="text-[#535151] text-center">Add Money</p>
+          </div>
+          <div id="cash-out" class="p-3 rounded-xl border border-[#c2b7b7]">
+            <img class="w-[30px] mx-auto" src="assets/send1.png" alt="" />
+            <p class="text-[#535151] text-center">Cashout</p>
+          </div>
+          <div id="transfer" class="p-3 rounded-xl border border-[#c2b7b7]">
+            <img class="w-[30px] mx-auto" src="assets/money1.png" alt="" />
+            <p class="text-[#535151] text-[14px] text-center">Transfer Money</p>
+          </div>
+          <div id="bonus-box" class="p-3 rounded-xl border border-[#c2b7b7]">
+            <img class="w-[30px] mx-auto" src="assets/bonus1.png" alt="" />
+            <p class="text-[#535151] text-center">Get Bonus</p>
+          </div>
+          <div id="pay-bill-box" class="p-3 rounded-xl border border-[#c2b7b7]">
+            <img class="w-[30px] mx-auto" src="assets/purse1.png" alt="" />
+            <p class="text-[#535151] text-center">Pay Bill</p>
+          </div>
+          <div class="p-3 rounded-xl border border-[#c2b7b7]">
+            <img
+              class="w-[30px] mx-auto"
+              src="assets/transaction1.png"
+              alt=""
+            />
+            <p class="text-[#535151] text-center">Transactions</p>
+          </div>
+        </div>
+        <!-- add money form -->
+        <section id="add-money-box" class="mt-6">
+          <h1 class="text-xl font-bold mb-4 text-center">Add Money</h1>
+          <fieldset class="fieldset">
+            <legend class="text-[16px] font-medium">Select A Bank</legend>
+            <select
+              class="select select-ghost py-6 bg-[#f5f4f7] rounded-full border-none text-gray-700"
+            >
+              <option disabled selected class="bg-white text-gray-500">
+                Select Bank
+              </option>
+              <option value="Bkash">Bkash</option>
+              <option value="Nagad">Nagad</option>
+              <option value="Roket">Roket</option>
+            </select>
+
+            <label class="label text-black font-medium text-[16px]">
+              Mobile Number
+            </label>
+            <input
+              id="number-fild"
+              type="number"
+              class="input py-6 bg-[#f5f4f7] rounded-full border-none"
+              placeholder="Enter your number "
+              required
+              value="01723536712"
+            />
+
+            <label class="label text-black font-medium text-[16px]"
+              >Amount To Add</label
+            >
+            <input
+              id="amount-fild"
+              type="text"
+              class="input py-6 rounded-full bg-[#f5f4f7] border-none"
+              placeholder="Add Amount To Withdraw"
+              required
+            />
+            <label class="label text-black font-medium text-[16px]"
+              >Pin Number</label
+            >
+            <input
+              id="pin-fild"
+              type="text"
+              class="input py-6 rounded-full bg-[#f5f4f7] border-none"
+              placeholder="Enter 4 digit pin number"
+              required
+              value="1234"
+            />
+            <button
+              id="add-money-btn"
+              class="btn btn-neutral mt-4 bg-[#0874F2] border-none rounded-full py-6 text-[16px] cursor-pointer"
+            >
+              Add Money
+            </button>
+          </fieldset>
+        </section>
+        <!-- cash out form -->
+        <section id="cash-out-box" class="mt-6">
+          <h1 class="text-xl font-bold mb-4 text-center">Cash Out</h1>
+          <fieldset class="fieldset">
+            <label class="label text-black font-medium text-[16px]">
+              Agent Number
+            </label>
+            <input
+              id="agent-number"
+              type="number"
+              class="input py-6 bg-[#f5f4f7] rounded-full border-none"
+              placeholder="Enter 11 Digit Number "
+              required
+            />
+
+            <label class="label text-black font-medium text-[16px]"
+              >Amount</label
+            >
+            <input
+              id="withdraw-fild"
+              type="text"
+              class="input py-6 rounded-full bg-[#f5f4f7] border-none"
+              placeholder="Enter Amount To Withdraw"
+              required
+            />
+            <label class="label text-black font-medium text-[16px]"
+              >Pin Number</label
+            >
+            <input
+              id="pin-input"
+              type="text"
+              class="input py-6 rounded-full bg-[#f5f4f7] border-none"
+              placeholder="Enter 4 digit pin number"
+              required
+            />
+            <button
+              id="cash-out-btn"
+              class="btn btn-neutral mt-4 bg-[#0874F2] border-none rounded-full py-6 text-[16px] cursor-pointer"
+            >
+              Withdraw Money
+            </button>
+          </fieldset>
+        </section>
+        <!-- transfer form -->
+        <section id="Transfer" class="mt-6">
+          <h1 class="text-xl font-bold mb-4 text-center">Transfer Money</h1>
+          <fieldset class="fieldset">
+            <label class="label text-black font-medium text-[16px]">
+              User Accont Number
+            </label>
+            <input
+              id="number-fild"
+              type="number"
+              class="input py-6 bg-[#f5f4f7] rounded-full border-none"
+              placeholder="Enter 11 Digit Number "
+              required
+            />
+
+            <label class="label text-black font-medium text-[16px]"
+              >Amount</label
+            >
+            <input
+              id="amount-fild"
+              type="text"
+              class="input py-6 rounded-full bg-[#f5f4f7] border-none"
+              placeholder="Enter Amount To Transfer"
+              required
+            />
+            <label class="label text-black font-medium text-[16px]"
+              >Pin Number</label
+            >
+            <input
+              id="pin-fild"
+              type="text"
+              class="input py-6 rounded-full bg-[#f5f4f7] border-none"
+              placeholder="Enter 4 digit pin number"
+              required
+            />
+            <button
+              id="add-money-btn"
+              class="btn btn-neutral mt-4 bg-[#0874F2] border-none rounded-full py-6 text-[16px] cursor-pointer"
+            >
+              Send Now
+            </button>
+          </fieldset>
+        </section>
+        <!-- get bonus form -->
+        <section id="bonus-form" class="mt-6">
+          <h1 class="text-xl font-bold mb-4 text-center">get Bonus</h1>
+          <fieldset class="fieldset">
+            <label class="label text-black font-medium text-[16px]"
+              >Enter Bonus Coupon</label
+            >
+            <input
+              id="pin-fild"
+              type="text"
+              class="input py-6 rounded-full bg-[#f5f4f7] border-none"
+              placeholder="Enter your coupon"
+              required
+            />
+            <button
+              id="add-money-btn"
+              class="btn btn-neutral mt-4 bg-[#0874F2] border-none rounded-full py-6 text-[16px] cursor-pointer"
+            >
+              Get Bonus
+            </button>
+          </fieldset>
+        </section>
+        <!-- pay bill form -->
+        <section id="pay-bill-form" class="mt-6">
+          <h1 class="text-xl font-bold mb-4 text-center">Pay Bill</h1>
+          <fieldset class="fieldset">
+            <legend class="text-[16px] font-medium">Select To Pay</legend>
+            <select
+              class="select select-ghost py-6 bg-[#f5f4f7] rounded-full border-none text-gray-700"
+            >
+              <option disabled selected class="bg-white text-gray-500">
+                Select Bank
+              </option>
+              <option value="Bkash">Bkash</option>
+              <option value="Nagad">Nagad</option>
+              <option value="Roket">Roket</option>
+            </select>
+
+            <label class="label text-black font-medium text-[16px]">
+              Biller Account Number
+            </label>
+            <input
+              id="number-fild"
+              type="number"
+              class="input py-6 bg-[#f5f4f7] rounded-full border-none"
+              placeholder="Enter account number "
+              required
+              value="01723536712"
+            />
+
+            <label class="label text-black font-medium text-[16px]"
+              >Amount To Pay</label
+            >
+            <input
+              id="amount-fild"
+              type="text"
+              class="input py-6 rounded-full bg-[#f5f4f7] border-none"
+              placeholder="Add Amount To Pay"
+              required
+            />
+            <label class="label text-black font-medium text-[16px]"
+              >Pin Number</label
+            >
+            <input
+              id="pin-fild"
+              type="text"
+              class="input py-6 rounded-full bg-[#f5f4f7] border-none"
+              placeholder="Enter 4 digit pin number"
+              required
+              value="1234"
+            />
+            <button
+              id="add-money-btn"
+              class="btn btn-neutral mt-4 bg-[#0874F2] border-none rounded-full py-6 text-[16px] cursor-pointer"
+            >
+              Pay Now
+            </button>
+          </fieldset>
+        </section>
+      </section>
+    </section>
+    <script src="js/add-money.js"></script>
+    <script src="js/toggle.js"></script>
+    <script src="js/cash-out.js"></script>
+  </body>
+</html>
